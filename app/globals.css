@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus everywhere -- never suppressed */
+:focus-visible {
+  outline: 2px solid theme('colors.wine.DEFAULT');
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+body {
+  background-image: theme('backgroundImage.grain');
+}
+
+/* Dot-leader utility used on the menu page, evokes a printed menu card
+   where item names and prices are joined by a row of dots. */
+.dot-leader {
+  flex: 1;
+  border-bottom: 2px dotted theme('colors.ink.DEFAULT / 30%');
+  margin: 0 0.6em;
+  min-width: 1.5em;
+  transform: translateY(-0.3em);
+}
